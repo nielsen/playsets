@@ -1,0 +1,32 @@
+
+ITEM TYPES:
+
+WEAPON-  An enhanced weapon a player takes with them into combat.  These usually enhance or allow for a new special kind of attack.
+ARMOR- Special armor a player takes with them into combat.  These generally have special resists on them.
+TRINKET- A special gadget or magical charm a player takes with them into combat.  These have special abilities that can be activated in combat.
+CONSUMABLE- One time use items that can be used in combat.  
+NON-COMBAT- Items that have no use in combat.
+
+COMBAT
+
+Players can take only a few items with them into combat.  These include 1 Weapon, 1 Armor, 2 Trinkets, and 2 Consumables.
+
+Weapon
+Armor
+Trinket 1
+Trinket 2
+Consumable 1
+Consumable 2
+
+INVENTORY
+
+Simplequest has no inventory limit built into the system.  If you don’t like the idea of the “infinite backpack” you are welcome to limit the carrying abilities of your players.
+
+ITEM TEMPLATE:
+
+NAME:
+TYPE:
+VALUE: (In gold)
+DESCRIPTION: 
+ATTRIBUTES:
+SPECIFIC CLASS/JOB ATTRIBUTES: 

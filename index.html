@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" ng-app="ngApp">
+	<head>
+		<meta charset="utf-8">
+		<title>simplequest beta</title>
+		<base href="/">
+
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="icon" type="image/png" href="/styles/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/styles/images/favicon-16x16.png" sizes="16x16">
+    <link rel="shortcut icon" href="/styles/images/favicon.ico">
+
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+		
+    <link rel="stylesheet" href="/styles/style.css">
+
+		<script src="/bower_components/angular/angular.min.js"></script>
+		<script src="/bower_components/angular-route/angular-route.min.js"></script>
+		<script src="/bower_components/marked/lib/marked.js"></script>
+		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="/vendor/js/alertify.min.js"></script>
+		<script src="/bower_components/fastclick/lib/fastclick.js"></script>
+		<script src="/bower_components/angular-ui-switch/angular-ui-switch.min.js"></script>
+    <script src="/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+	</head>
+	<body ng-controller="simpleQuestController">
+		<div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <h1 id="title">SimpleQuest <sup>beta</sup></h1>
+        </div>
+      </div>  
+      
+      <section id="application-view" ng-view></section>
+    </div>
+
+		<script src="scripts/script.js"></script>
+	</body>
+
+  <!--
+    COLOPHON:
+      * Open source re-experience by Ted Nielsen
+      * Copyright 2015 Tony Maitz
+      * Software released under the MIT License
+      * Font: Raleway by Google
+      * Coded in Sublime Text 3
+      * Icons by Playsets and Font Awesome
+  -->
+</html>

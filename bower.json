@@ -1,0 +1,20 @@
+{
+  "name": "sq",
+  "dependencies": {
+    "alertifyjs": "0.4.0rc1",
+    "angular": "1.2.16",
+    "angular-local-storage": "0.1.5",
+    "angular-resource": "1.2.16",
+    "angular-cookies": "1.2.16",
+    "angular-sanitize": "1.2.16",
+    "angular-route": "1.2.16",
+    "angular-ui-switch": "0.1.0",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.1.0",
+    "Buttons": "2.0.0",
+    "fastclick": "1.0.1",
+    "jquery": "2.1.0",
+    "marked": "0.3.2",
+    "normalize-css": "3.0.1"
+  }
+}

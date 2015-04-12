@@ -1,0 +1,110 @@
+Monster Template
+
+General Notes on Monster Creation:
+
+There are usually only 1 or at most 2 elites per combat scenario.  Most monsters will be minions.
+
+Most minions will only have a Standard Attack.  Some Elites may have several.
+
+D6 is a standard attack.  Don’t go above D10 unless you hate your players
+
+Use Immunities sparingly.  I prefer to only do half damage immunities so a player isn’t completely locked out from being effective. 
+
+Combat Behavior is just generally what it prefers to do in combat.  This can be a hard and fast rule for dumber creatures, but think of it more like a general guideline.  Don’t inform your players of this as it may be fun for them to puzzle it out themselves.
+
+Don’t get too crazy with the description.  It’s only there if there’s something very distinct about your creature that isn’t obvious from the name or the token you assign to it within playsets.
+
+Some monsters are very large and take up multiple squares or are extremely tall.  Note this in the size section.  It makes no sense for a dragon to follow your players through a doorway.
+
+————
+
+
+NAME:
+GENERAL TYPE: Beast/Humanoid/Magic/Machine
+SPECIFIC TYPE: 
+MINION/ELITE: 
+SIZE: 
+DESCRIPTION: 
+
+HP:
+ACTIONS PER TURN
+SPEED: 
+IMMUNITIES: 
+COMBAT BEHAVIOR: 
+
+NOTES:
+
+STANDARD ATTACK NAME:
+STANDARD ATTACK DAMAGE and TARGETS:
+STANDARD ATTACK RANGE:
+STANDARD ATTACK SPECIAL EFFECT:
+
+SPECIAL ATTACK NAME:
+SPECIAL ATTACK DAMAGE:
+SPECIAL ATTACK RANGE:
+SPECIAL ATTACK SPECIAL EFFECT/RESTRICTIONS:
+
+————————————————————————
+
+
+EXAMPLES:
+
+Dire Penguin
+Beast/Penguin
+Minion
+Normal sized, 1 square
+DESCRIPTION: Taller than your average penguin
+HP: 25
+ACTIONS PER TURN: Move, Attack
+SPEED: 5
+IMMUNITIES: Cold attacks do half damage
+COMBAT BEHAVIOR: Attacks nearest
+
+
+Peck
+D6 Damage to single target
+Adjacent
+On roll of 6, target is also poisoned and takes 1 damage every turn until cured
+
+
+Slide
+D6 Damage to all targets
+Range 5
+Penguin physically moves 5 squares in a straight line hitting every player it passes THROUGH.  Can only be performed on ice.  This can REPLACE the standard move action.
+
+———
+
+Pete the Penguin
+Beast/Penguin
+Elite
+Normal sized, 1 square
+DESCRIPTION: Looks like a regular penguin, but he’s got a lobotomy scar and strangely intelligent eyes.  Oh yeah, and he has a flamethrower.
+
+HP: 40
+ACTIONS PER TURN: Move, 2x Attack
+SPEED: 6
+IMMUNITIES: Cold attacks do no damage
+COMBAT BEHAVIOR: Highly intelligent.  Will attack where he can do the most damage.
+
+NOTES: Pete will give up when reduced to under 5 hit points.  He will order his surviving penguins to stand down and will give the players information on where the Ice King is hiding.  If the players are charismatic enough, he may even join them on the journey!
+
+Peck
+D6 Damage to single target
+Adjacent
+On roll of 5-6, target is also poisoned and takes 2 damage every turn until cured
+
+
+Slide
+D8 Damage to all targets
+Range 6
+Penguin physically moves 5 squares in a straight line hitting every player it passes THROUGH.  Can only be performed on ice.  This can REPLACE the standard move action.
+
+Flamethrower
+D4 Damage to all targets in range
+Range 2
+Create random “flame spots” on squares equal to half of rolled amount (round up).  Any character that ends a turn adjacent to these flame spots takes 1 damage.
+
+
+
+
+

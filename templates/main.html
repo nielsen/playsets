@@ -1,0 +1,217 @@
+<div class="container">
+  
+  <div class="row" id="new-player" ng-hide="user.name && user.personality && user.class && user.profession">
+    <div class="six columns">
+      <input type="text" ng-model="user.name" class="new-player-name" placeholder="Character Name" /> is a ...
+
+      <select class="players-index" ng-options="character as character for character in gmMode.characters"
+        ng-model="gmMode.selectedCharacter"
+        ng-change="overrideUserScopeForCharacterChange()"
+        ng-show="gmMode.active">
+          <option value="">[ or chose from existing characters ]</option>
+      </select>
+
+      <div id="gm-mode-toggle" ng-show="gmMode.supported">
+        <form>
+          <div class="four columns">
+            <label class="player">Player</label>
+          </div>
+          
+          <div class="two columns">
+            <switch id="gmMode-switch" ng-model="gmMode.active" class="green"></switch>
+          </div>
+          
+          <div class="three columns">
+            <label class="gm">GM</label>
+          </div>  
+        </form> 
+      </div>
+    </div>
+
+    <div class="six columns">
+      <div class="twelve columns">
+
+        <select class="new-player-personality" ng-model="user.personality"
+          ng-options="personality as (personality | humanize) for personality in simpleQuest.personalities">
+            <option value="">[ personality ]</option>
+        </select>      
+      
+      </div>
+
+      <div class="twelve columns"> 
+        <select class="new-player-class" ng-model="user.class"
+          ng-options="class as (class | humanize) for class in simpleQuest.classes">
+            <option value="">[ class ]</option>
+        </select>         
+      </div>
+
+      <div class="twelve columns"> 
+          <select class="new-player-profession" ng-model="user.profession"
+            ng-options="profession as (profession | humanize) for profession in simpleQuest.professions">
+              <option value="">[ profession ]</option>
+          </select>         
+      </div>
+    </div>  
+  </div>
+
+
+  <div class="row" id="player-info" ng-show="user.name && user.personality && user.class && user.profession">
+    <div class="six columns">
+      <div class="twelve columns player-data-item">
+        <i class="fa fa-heartbeat"></i>
+        <select id="health" ng-model="user.hp" ng-change="saveCharacter();">
+          <option ng-repeat="i in [] | range:30" value="{{i}}">{{i}} HP</option>
+          <option value="0">0 HP</option>
+        </select>
+      </div>
+
+      <div class="twelve columns player-data-item">
+        <i class="fa fa-circle-thin"></i>
+        <select id="energy" ng-model="user.energy" ng-change="saveCharacter();">
+          <option value="0">0 Energy</option>
+          <option value="1">1 Energy</option>
+          <option value="2">2 Energy</option>
+          <option value="3">3 Energy</option>
+          <option value="4">4 Energy</option>
+          <option value="5">5 Energy</option>
+          <option value="6">6 Energy</option>
+          <option value="7">7 Energy</option>
+          <option value="8">8 Energy</option>
+          <option value="9">9 Energy</option>
+          <option value="10">10 Energy</option>
+        </select> 
+      </div>
+      
+      <div class="twelve columns player-data-item">
+        <i class="fa fa-connectdevelop" ng-click="diceBagRoll()"></i>
+        <select name="" id="diceRoller" ng-model="dice.sides" ng-change="diceBagRoll()">
+          <option value="0">Roll</option>
+          <option value="20">d20</option>
+          <option value="12">d12</option>
+          <option value="10">d10</option>
+          <option value="8">d8</option>
+          <option value="6">d6</option>
+          <option value="4">d4</option>
+          <option value="100">d100</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="six columns">
+      <div class="twelve columns">
+        <div class="six columns" ng-show="!gmMode.active">{{user.name}} is a...</div>
+
+        <div class="six columns" ng-show="gmMode.active" style="margin-left:0px">
+          <select class="players-index" ng-options="character as character for character in gmMode.characters"
+            ng-model="gmMode.selectedCharacter"
+            ng-show="gmMode.selectedCharacter"
+            ng-change="overrideUserScopeForCharacterChange()">
+          </select>
+
+          <span ng-hide="gmMode.selectedCharacter">{{user.name}}</span>
+
+          is a...
+        </div>
+
+        <div class="six columns">{{user.personality | humanize}} <br />{{user.class | humanize}} <br />{{user.profession | humanize}}</div>
+
+        <textarea id="notes" ng-model="user.notes" ng-change="saveCharacter();"></textarea>
+
+        <button id="reset-character" class="button button-caution button-rounded"
+          ng-disabled="!(user.name && user.personality && user.class && user.profession)"
+          ng-click="resetCharacter();">Reset</button>
+
+        <button id="save-character" class="button button-highlight button-rounded"
+          ng-show="( (localStorageService.get( user.name ) == null) && gmMode.active )"
+          ng-click="saveCharacter();">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content" class="row {{user.personality}}">
+    <div class="twelve columns nothing-here" ng-hide="(user.name && user.personality && user.class && user.profession)">
+      You need to complete your character before you know what they can do.
+    </div>
+
+    <section ng-show="(user.name && user.personality && user.class && user.profession)">
+      <div class="twelve columns" id="section-toggles">
+        <div class="three columns section-toggle {{simpleQuest.sections.general}}" ng-click="toggleSectionVisibility('general');">
+          General
+        </div>
+
+        <div class="three columns section-toggle {{simpleQuest.sections.combat}}" ng-click="toggleSectionVisibility('combat');">
+          Combat
+        </div>
+
+        <div class="three columns section-toggle {{simpleQuest.sections.outOfCombat}}" ng-click="toggleSectionVisibility('outOfCombat');">
+          Out-of-Combat
+        </div>
+
+        <div class="three columns section-toggle {{simpleQuest.sections.character}}" ng-click="toggleSectionVisibility('character');">
+          Character
+        </div>
+      </div>
+    </section>
+
+    <section ng-show="(user.name && user.personality && user.class && user.profession && simpleQuest.sections.general == 'visible')">
+      <div class="twelve columns section-header" id="general-section">
+        <h3>
+          <i class="fa fa-beer"></i>
+
+          General Activities
+        </h3>
+      
+        <hr />
+      </div>
+      <md id="generalWrap" ng-include="'content/general.md'"></md>
+    </section>
+
+    <section ng-show="(user.name && user.personality && user.class && user.profession && simpleQuest.sections.combat == 'visible')">
+      <div class="twelve columns section-header" id="combat-section">
+        <h3>
+          <i class="fa fa-shield"></i>
+
+          Combat Activities
+        </h3>
+      
+        <hr />
+      </div>
+      <md id="combatClassWrap" ng-include="getMarkdown('combat', 'class')"></md>
+      <md id="combatProfessionWrap" ng-include="getMarkdown('combat', 'profession')"></md>
+    </section>
+
+    <section ng-show="(user.name && user.personality && user.class && user.profession && simpleQuest.sections.outOfCombat == 'visible')">
+      <div class="twelve columns section-header" id="out-of-combat-section">
+        <h3>
+          <i class="fa fa-sun-o"></i>
+
+          Out-of-Combat Activities
+        </h3>
+      
+        <hr />
+      </div>
+
+      <md id="outOfCombatClassWrap" ng-include="getMarkdown('out-of-combat', 'class')"></md>
+      <md id="outOfCombatProfessionWrap" ng-include="getMarkdown('out-of-combat', 'profession')"></md>
+    </section>
+
+    <section ng-show="(user.name && user.personality && user.class && user.profession && simpleQuest.sections.character == 'visible')">
+      <div class="twelve columns section-header" id="character-section">
+        <h3>
+          <i class="fa fa-user"></i>
+
+          Character Summary
+        </h3>
+      
+        <hr />
+      </div>
+      <md id="attributesWrap" ng-include="'content/attributes.md'"></md>
+    </section>
+
+    <div class="twelve columns nothing-here" 
+      ng-show="(simpleQuest.sections.general == 'invisible' && simpleQuest.sections.combat == 'invisible') && 
+                simpleQuest.sections.outOfCombat == 'invisible' && simpleQuest.sections.character == 'invisible'">
+      You need to select at least one toggle to see some content here.
+    </div>
+  </div>  
+</div>

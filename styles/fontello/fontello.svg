@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="left-open" unicode="&#xe800;" d="m0 353l391 391q18 18 43 18 24 0 43-18 18-18 18-44t-18-43l-304-304 304-305q18-17 18-43t-18-43q-18-18-43-18t-43 18z" horiz-adv-x="495.1" />
+<glyph glyph-name="down-open" unicode="&#xe801;" d="m0 533q0 25 18 43t44 18 42-18l305-303 304 303q18 18 43 18t43-18q18-18 18-43t-18-43l-390-391-391 391q-18 19-18 43z" horiz-adv-x="817.4" />
+<glyph glyph-name="heart" unicode="&#xe802;" d="m0 530q0 103 73 176t177 73q70 0 128-35t91-92q32 58 90 93t128 34q103 0 177-73t73-176q0-95-63-166l-343-403q-25-30-62-30t-63 30l-343 403q-63 71-63 166z" horiz-adv-x="937.5" />
+<glyph glyph-name="heart-broken" unicode="&#xe803;" d="m0 530q0 103 73 176t177 73q81 0 147-47l-14-250q0-12 9-20t21-9h10q12 0 18-8t3-20l-57-172q-4-12-2-13t9 8l194 267q7 9 4 16t-16 7h-77q-12 0-17 8t-1 18l82 183q57 32 124 32 103 0 177-73t73-176q0-94-63-166l-343-403q-25-30-62-30t-63 30l-342 403q-64 72-64 166z" horiz-adv-x="937.5" />
+</font>
+</defs>
+</svg>
