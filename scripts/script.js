@@ -54,7 +54,7 @@ angular.module( 'ngApp', ['ngRoute', 'uiSwitch', 'LocalStorageModule'])
 })
 
 .run(function($rootScope, localStorageService) {
-  FastClick.attach(document.body);
+  //FastClick.attach(document.body);
 
   $rootScope.user = {
     name: '',

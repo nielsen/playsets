@@ -2,7 +2,7 @@
   
   <div class="row" id="new-player" ng-hide="user.name && user.personality && user.class && user.profession">
     <div class="six columns">
-      <input type="text" ng-model="user.name" class="new-player-name" placeholder="Character Name" /> is a ...
+      <input type="text" ng-model="user.name" class="new-player-name" placeholder="Character Name"> is a ...
 
       <select class="players-index" ng-options="character as character for character in gmMode.characters"
         ng-model="gmMode.selectedCharacter"
