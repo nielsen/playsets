@@ -11,19 +11,11 @@
           <option value="">[ or chose from existing characters ]</option>
       </select>
 
-      <div id="gm-mode-toggle" ng-show="gmMode.supported">
+      <div class="gm-mode-toggle non-mobile" ng-show="gmMode.supported">
         <form>
-          <div class="four columns">
-            <label class="player">Player</label>
-          </div>
-          
-          <div class="two columns">
-            <switch id="gmMode-switch" ng-model="gmMode.active" class="green"></switch>
-          </div>
-          
-          <div class="three columns">
-            <label class="gm">GM</label>
-          </div>  
+          <label>Player</label>
+          <switch id="gmMode-switch" ng-model="gmMode.active" class="green"></switch>
+          <label>GM</label>
         </form> 
       </div>
     </div>
@@ -215,3 +207,11 @@
     </div>
   </div>  
 </div>
+
+<div class="gm-mode-toggle mobile" ng-show="gmMode.supported">
+    <form>
+      <label>Player</label>
+      <switch id="gmMode-switch" ng-model="gmMode.active" class="green"></switch>
+      <label>GM</label>
+    </form> 
+  </div>

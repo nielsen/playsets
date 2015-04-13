@@ -13,6 +13,8 @@ $playsetsGreen: #758d2c;
 $playsetsBlack: #3f3e4a;
 $playsetsWhite: #daceae;
 
+$break-small: 550px;
+
 @mixin strippedInputDefaults() {
   background:none;
 	border: none;
@@ -59,34 +61,52 @@ h1#title{
 
 .players-index{ @include strippedInputDefaults(); }
 
+.gm-mode-toggle{ 
+  &.mobile{ 
+    margin-top: 35px;
+    display: none;
+
+    @media screen and (max-width: $break-small) {
+      display: block;
+    }
+  }
+  
+  &.non-mobile{
+    display: block;
+
+    @media screen and (max-width: $break-small) {
+      display: none;
+    }
+  }
+
+  text-align: center;
+
+  label{
+    font-size: .8em;
+    font-weight: normal;
+    display: inline;
+    margin: 0 10px;
+    position: relative;
+    top: -6px;
+  }
+
+  span.switch {
+    width:40px;
+    height: 20px;
+
+    small{
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
 #new-player {
   .new-player-name{ @include strippedInputDefaults(); }
   .new-player-personality{ @include strippedInputDefaults(); width: 100%; }
   .new-player-class{ @include strippedInputDefaults(); width: 100%; }
   .new-player-profession{ @include strippedInputDefaults(); width: 100%; }
   .players-index{ width: 100%; }
-
-  #gm-mode-toggle{ 
-    text-align: center;
-
-    label{
-      font-size: .8em;
-      font-weight: normal;
-    }
-
-    label.player{ text-align: right; }
-    label.gm{ text-align: left; }
-
-    span.switch {
-      width:40px;
-      height: 20px;
-
-      small{
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
 }
 
 #player-info {
@@ -123,7 +143,7 @@ h1#title{
   .nothing-here {
     color: #777;
     padding: 37px 15px;
-    height: 100px;
+    min-height: 100px;
     text-align: center;
     border-top: 2px solid #e6e6e6;
     background: #fff;
@@ -153,6 +173,7 @@ h1#title{
     .section-toggle{
       background: #AED3F2;
       padding: 10px 0;
+      margin-bottom: 3px;
 
       &.visible{
         opacity: 1;
