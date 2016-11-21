@@ -1,4 +1,4 @@
-angular.module( 'ngApp', ['ngRoute', 'uiSwitch', 'LocalStorageModule'])
+angular.module( 'ngSimpleQuest', ['ngRoute', 'uiSwitch', 'LocalStorageModule'])
 
 .filter('range', function() {
   return function(val, range) {
@@ -90,7 +90,7 @@ angular.module( 'ngApp', ['ngRoute', 'uiSwitch', 'LocalStorageModule'])
   $rootScope.user.personality = $routeParams.personality;
   $rootScope.user.class = $routeParams.class;
   $rootScope.user.profession = $routeParams.profession;
-  
+
   if(!localStorageService.isSupported) {
     $rootScope.gmMode.supported = false;
   }
@@ -99,7 +99,7 @@ angular.module( 'ngApp', ['ngRoute', 'uiSwitch', 'LocalStorageModule'])
     var uri = '';
 
     if ( $rootScope.user.class && type == "class" ) {
-      return 'content/classes/' + $rootScope.user.class + '/' + category + '.md';  
+      return 'content/classes/' + $rootScope.user.class + '/' + category + '.md';
     }
 
     if ( $rootScope.user.profession && type == "profession" ) {
@@ -142,11 +142,11 @@ angular.module( 'ngApp', ['ngRoute', 'uiSwitch', 'LocalStorageModule'])
     var newUser = localStorageService.get( $rootScope.gmMode.selectedCharacter  );
 
     if ( newUser !== null ) {
-    	$rootScope.user = newUser;	
+    	$rootScope.user = newUser;
     } else {
     	alert('Error loading that user. :/');
     }
-    
+
   };
 
   $scope.inlineRoll = function (d) {
@@ -227,7 +227,7 @@ angular.module( 'ngApp', ['ngRoute', 'uiSwitch', 'LocalStorageModule'])
 
 
       html = startFindingText(obj).html();
-      
+
       // is there an alternative to .replaceWith, so I don't have to call window.reload() to remove sticky cards?
       $compile(html)($scope, function(elem) { $elem.replaceWith(elem); });
     }
